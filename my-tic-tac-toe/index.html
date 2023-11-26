@@ -5,27 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>TIC-TAC-TOC-GAME</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <main>
-      <div class="turn"></div>
-      <div class="drop-down"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="result"></div>
-      <div class="result"></div>
-      <div class="result"></div>
+      <div class="grid">
+        <!-- TURN INDICATOR -->
+        <div class="turn">
+          <i class="fa-solid fa-xmark"></i>
+          <p>Player 1, you're up!</p>
+        </div>
+
+        <!-- DROP DOWN MENU -->
+        <div class="drop-down">
+          <button class="action-button">
+            Actions <i class="fa-solid fa-caret-down"></i>
+          </button>
+
+          <div class="drop-down-items hidden">
+            <button>Reset</button>
+            <button>New round</button>
+          </div>
+        </div>
+
+        <!-- GAME BOARD -->
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <!-- RESULTS -->
+        <div class="result" id="w1">
+          <p>Player 1</p>
+          <span>0 Wins</span>
+        </div>
+        <div class="result" id="tie">
+          <p>Ties</p>
+          <span>0</span>
+        </div>
+        <div class="result" id="w2">
+          <p>Player 2</p>
+          <span>0 Wins</span>
+        </div>
+      </div>
     </main>
+
+    <!-- FOOTER -->
     <footer>
       <p>
-        Githubs of original creator:
+        Githubs of original creators:
         <a href="https://github.com/meghannfh">meghannfh</a> and
         <a href="https://github.com/ivan00stojanovic">ivan00stojanovic</a>.
       </p>
@@ -38,6 +77,15 @@
         <a href="https://github.com/mehdi-ceng/tic-tac-toe-game">here</a>!
       </p>
     </footer>
+
+    <!-- WINNER POP UP -->
+    <div class="pop-up hidden">
+      <div class="pop-up-content">
+        <p>Winner is</p>
+        <button class="pop-up-button">Play again</button>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

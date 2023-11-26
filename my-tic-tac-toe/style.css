@@ -11,6 +11,8 @@ CSS RESET AND INITIALIZATION
   --turquoise: #3cc4bf;
   --yellow: #f2b147;
   --light-gray: #d3d3d3;
+  --p1-color: #8910e0;
+  --p2-color: #10e067;
 }
 
 * {
@@ -20,4 +22,254 @@ CSS RESET AND INITIALIZATION
   list-style: none;
   font-family: "Montserrat", sans-serif;
   border: none;
+}
+
+html {
+  background-color: var(--dark-gray);
+}
+
+/*
+=======================
+GAME GRID STYLES
+=======================
+*/
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: 40px repeat(3, 80px) 50px;
+  grid-template-columns: repeat(3, 80px);
+  gap: 8px;
+}
+
+@media (min-width: 750px) {
+  .grid {
+    grid-template-rows: 60px repeat(3, 130px) 70px;
+    grid-template-columns: repeat(3, 130px);
+    gap: 15px;
+  }
+}
+
+.grid div {
+  border-radius: 5%;
+}
+
+/*
+==========
+TURN 
+===========
+*/
+.turn {
+  grid-column-start: 1;
+  grid-column-end: 3;
+
+  display: flex;
+  align-items: center;
+  color: var(--p1-color);
+}
+
+@keyframes icon-scaling-animation {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  30% {
+    transform: scale(1.3);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.turn i {
+  font-size: 1.6rem;
+  margin: 5px;
+  animation: 0.9s ease-in-out icon-scaling-animation;
+}
+
+@keyframes text-move-animation {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  30% {
+    opacity: 0.8;
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.turn p {
+  font-size: 0.8rem;
+  animation: 0.9s ease-in-out text-move-animation;
+}
+
+/*
+===========
+HIDDEN
+==============
+*/
+.hidden {
+  display: none !important;
+}
+
+/*
+=====================
+DROP DOWN MENU
+=====================
+*/
+.drop-down {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: transparent;
+  color: var(--light-gray);
+}
+
+.drop-down-items {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 5px;
+  top: 50px;
+  z-index: 10;
+}
+
+.drop-down-items button {
+  background-color: transparent;
+  color: var(--light-gray);
+}
+
+/*
+======================
+CELL
+========================
+*/
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  background-color: var(--gray);
+  box-shadow: -1px -2px 17px 3px rgba(0, 0, 0, 0.75);
+}
+
+.cell:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+/*
+===============
+RESULTS
+==============
+*/
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.result p {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.result span {
+  font-size: 0.6rem;
+}
+
+#w1 {
+  background-color: var(--p1-color);
+}
+
+#w2 {
+  background-color: var(--p2-color);
+}
+
+#tie {
+  background-color: var(--light-gray);
+}
+
+/*
+===========================
+FOOTER STYLES
+========================
+*/
+
+footer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--yellow);
+}
+
+footer a {
+  color: var(--turquoise);
+}
+
+/*
+=================
+WINNER POP UP WINDOW
+=======================
+*/
+
+.pop-up {
+  position: fixed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.pop-up-content {
+  background-color: #2a4544;
+  height: 100px;
+  width: 100%;
+  max-width: 250px;
+  border-radius: 6px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--yellow);
+  gap: 20px;
+}
+
+.pop-up-button {
+  background-color: var(--turquoise);
+  border-radius: 2px;
+}
+
+.pop-up-button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transform: scale(1.1);
 }
