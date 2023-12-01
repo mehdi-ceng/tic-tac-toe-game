@@ -17,7 +17,7 @@
     <main>
       <div class="grid">
         <!-- TURN INDICATOR -->
-        <div class="turn">
+        <div class="turn p1-color" data-id="turn">
           <i class="fa-solid fa-xmark"></i>
           <p>Player 1, you're up!</p>
         </div>
@@ -79,10 +79,12 @@
     </footer>
 
     <!-- WINNER POP UP -->
-    <div class="pop-up hidden">
+    <div class="pop-up hidden" data-id="pop-up">
       <div class="pop-up-content">
-        <p>Winner is</p>
-        <button class="pop-up-button">Play again</button>
+        <p class="tie-color" data-id="pop-up-text"></p>
+        <button class="pop-up-button" data-id="pop-up-button">
+          Play again
+        </button>
       </div>
     </div>
 

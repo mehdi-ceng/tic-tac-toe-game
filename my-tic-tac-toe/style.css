@@ -37,6 +37,10 @@ html {
   color: var(--p2-color);
 }
 
+.tie-color {
+  color: var(--light-gray);
+}
+
 /*
 =======================
 GAME GRID STYLES
@@ -80,7 +84,6 @@ TURN
 
   display: flex;
   align-items: center;
-  color: var(--p1-color);
 }
 
 @keyframes icon-scaling-animation {
@@ -158,7 +161,7 @@ DROP DOWN MENU
 
 .action-button:hover {
   cursor: pointer;
-  //border: 1px solid rgba(255, 255, 255, 0.5);
+  /* border: 1px solid rgba(255, 255, 255, 0.5); */
   opacity: 0.8;
   box-shadow: -1px -1px 10px -3px rgba(255, 255, 255, 0.6);
 }
@@ -173,7 +176,7 @@ DROP DOWN MENU
   align-items: center;
   line-height: 1rem;
   z-index: 2;
-  //border: 1px solid rgba(255, 255, 255, 0.5);
+  /* border: 1px solid rgba(255, 255, 255, 0.5); */
   box-shadow: -1px -1px 10px -3px rgba(255, 255, 255, 0.6);
   border-radius: 5%;
 }
@@ -283,7 +286,6 @@ WINNER POP UP WINDOW
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: var(--yellow);
   gap: 20px;
 }
 
