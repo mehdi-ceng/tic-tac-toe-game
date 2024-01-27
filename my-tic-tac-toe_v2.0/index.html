@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>TIC-TAC-TOE-GAME</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="grid">
+        <!-- TURN INDICATOR -->
+        <div class="turn p1-color" data-id="turn">
+          <i class="fa-solid fa-xmark"></i>
+          <p>Player 1, you're up!</p>
+        </div>
+
+        <!-- DROP DOWN MENU -->
+        <div class="drop-down" data-id="drop-down">
+          <button class="action-button" data-id="action-button">
+            Actions <i class="fa-solid fa-caret-down"></i>
+          </button>
+
+          <div class="drop-down-items hidden" data-id="drop-down-items">
+            <button data-id="reset-button">Reset</button>
+            <button data-id="new-round-button">New round</button>
+          </div>
+        </div>
+
+        <!-- GAME BOARD -->
+        <div id="1" class="cell" data-id="cell"></div>
+        <div id="2" class="cell" data-id="cell"></div>
+        <div id="3" class="cell" data-id="cell"></div>
+        <div id="4" class="cell" data-id="cell"></div>
+        <div id="5" class="cell" data-id="cell"></div>
+        <div id="6" class="cell" data-id="cell"></div>
+        <div id="7" class="cell" data-id="cell"></div>
+        <div id="8" class="cell" data-id="cell"></div>
+        <div id="9" class="cell" data-id="cell"></div>
+
+        <!-- RESULTS -->
+        <div class="result" id="w1">
+          <p>Player 1</p>
+          <span>0 Wins</span>
+        </div>
+        <div class="result" id="tie">
+          <p>Ties</p>
+          <span>0</span>
+        </div>
+        <div class="result" id="w2">
+          <p>Player 2</p>
+          <span>0 Wins</span>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>
+        Githubs of original creators:
+        <a href="https://github.com/meghannfh">meghannfh</a> and
+        <a href="https://github.com/ivan00stojanovic">ivan00stojanovic</a>.
+      </p>
+      <p>
+        <a href="https://github.com/zachgoll">zachgoll</a> refactored this and
+        made youtube video about it.
+      </p>
+      <p>
+        My solution will be
+        <a href="https://github.com/mehdi-ceng/tic-tac-toe-game">here</a>!
+      </p>
+    </footer>
+
+    <!-- WINNER POP UP -->
+    <div class="pop-up hidden" data-id="pop-up">
+      <div class="pop-up-content">
+        <p class="tie-color" data-id="pop-up-text"></p>
+        <button class="pop-up-button" data-id="pop-up-button">
+          Play again
+        </button>
+      </div>
+    </div>
+
+    <!-- When we add script.js as module by default it is
+    in strcit mode i.e. Game, View, init() and so on are not
+    on the global scope -->
+    >
+    <script src="js/app.js" type="module"></script>
+  </body>
+</html>
